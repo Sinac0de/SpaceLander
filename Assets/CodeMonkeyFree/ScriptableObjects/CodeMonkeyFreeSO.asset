@@ -14,40 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.00
   subtype: lunarLanderFree
-  lastShownTimestamp: 1754680265
+  lastShownTimestamp: 1781253563
   lastUpdateResponse:
     version: 1.00
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1754764621
+  checkedLastUpdateTimestamp: 1781253563
   lastQOTDResponse:
-    questionId: 209
-    questionText: Can Color ever be null?
-    answerA: Yes, always
-    answerB: No
-    answerC: Yes, as Nullable
-    answerD: 
+    questionId: 311
+    questionText: Which namespace do we need to use File.WriteAllText()?
+    answerA: using System;
+    answerB: using UnityEngine;
+    answerC: using System.IO;
+    answerD: using UnityEngine.UI;
     answerE: 
-  lastQotdTimestamp: 1754764621
+  lastQotdTimestamp: 1781253563
   lastDynamicHeaderResponse:
-    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/summer2025CodeMonkeyBundle.png
-    topText: All my Courses (and Games) in one Bundle! DEEP DISCOUNT ONLY THIS SUMMER!
-    topLink: summer2025bundle
-    bottomText: Get my Code Monkey Toolkit and make games BETTER and FASTER! 50%
-      OFF right now!
-    bottomLink: toolkit
-  lastDynamicHeaderTimestamp: 1754764621
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/humbleJun26Synty.png
+    topText: Synty is BACK with a HumbleBundle 95% OFF! Don't miss this one!
+    topLink: humblebundle
+    bottomText: My 10+ Years of C# Knowledge in 1 Course!
+    bottomLink: csharpcourse
+  lastDynamicHeaderTimestamp: 1781253563
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1754764621
+  websiteLatestMessageTimestamp: 1781253563
   websiteLatestVideos:
     videos:
-    - youTubeId: 7xz5Xh4E_B0
-      title: I NEED your HELP!
-    - youTubeId: y-w3vnh_f4Q
-      title: Are Old Tutorials OBSOLETE?
-    - youTubeId: DaKW4kqFlao
-      title: How to LEARN new Skills on HARD MODE!
-    - youTubeId: ubBS7vTQlVo
-      title: Cooking is HARDER than Programming!
-  websiteLatestVideosTimestamp: 1754764621
+    - youTubeId: m0s3IUrWzVQ
+      title: How to Write High Quality Code that doesn't fall apart.
+    - youTubeId: NZfIxeK463o
+      title: Steam update just DESTROYED indie devs?!
+    - youTubeId: AuT-paQSAHU
+      title: NEW HOTTEST Steam Game Genres Revealed!
+    - youTubeId: 7s7rmNeo8Wo
+      title: Getting Started with Unity AI!
+  websiteLatestVideosTimestamp: 1781253563
