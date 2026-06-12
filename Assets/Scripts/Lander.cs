@@ -1,24 +1,32 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Lander : MonoBehaviour
-{
-    void Update()
-    {
-        if (Keyboard.current.upArrowKey.isPressed) {
-            Debug.Log("Up!");
-        }
+public class Lander : MonoBehaviour {
 
-        if(Keyboard.current.downArrowKey.isPressed) {
-            Debug.Log("Down!");
+    private Rigidbody2D landerRigidbody2D;
+
+
+    private void Awake() {
+        landerRigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
+
+    private void FixedUpdate() {
+        if (Keyboard.current.upArrowKey.isPressed) {
+            float force = 700f;
+            landerRigidbody2D.AddForce(force * transform.up * Time.deltaTime);
         }
 
         if (Keyboard.current.leftArrowKey.isPressed) {
-            Debug.Log("Left!");
+            float turnSpeed = 100f;
+            landerRigidbody2D.AddTorque(turnSpeed * Time.deltaTime);
         }
 
         if (Keyboard.current.rightArrowKey.isPressed) {
-            Debug.Log("Right!");
+            float turnSpeed = -100f;
+            landerRigidbody2D.AddTorque(turnSpeed * Time.deltaTime);
         }
     }
 }
