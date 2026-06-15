@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
 
     private void AddScore(int scoreAmount) {
         score += scoreAmount;
-        Debug.Log("Score: " + score);
     }
 
 
