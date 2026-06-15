@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
 
     private int score;
     private float timer;
+    private bool isTimerActive;
 
 
     private void Awake() {
@@ -16,10 +16,17 @@ public class GameManager : MonoBehaviour
     private void Start() {
         Lander.Instance.OnCoinPickup += Lander_OnCoinPickup;
         Lander.Instance.OnLanded += Lander_OnLanded;
+        Lander.Instance.OnStateChanged += Lander_OnStateChanged;
+    }
+
+    private void Lander_OnStateChanged(object sender, Lander.OnStateChangedEventArgs e) {
+        isTimerActive = e.state == Lander.State.Normal;
     }
 
     private void Update() {
-        timer += Time.deltaTime;
+        if (isTimerActive) {
+            timer += Time.deltaTime;
+        }
     }
 
     private void Lander_OnLanded(object sender, Lander.OnLandedEventArgs e) {
