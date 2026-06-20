@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.00
   subtype: lunarLanderFree
-  lastShownTimestamp: 1781796943
+  lastShownTimestamp: 1781899195
   lastUpdateResponse:
     version: 1.00
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1781796943
+  checkedLastUpdateTimestamp: 1781899196
   lastQOTDResponse:
     questionId: 313
     questionText: What will happen on January 19, 2038 at 03:14:07?
@@ -27,7 +27,7 @@ MonoBehaviour:
     answerC: Half-Life 3 release date
     answerD: 
     answerE: 
-  lastQotdTimestamp: 1781796943
+  lastQotdTimestamp: 1781899196
   lastDynamicHeaderResponse:
     topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/summer2025CodeMonkeyBundle.png
     topText: Get 80% OFF on ALL my Courses and Games!!!
@@ -35,19 +35,19 @@ MonoBehaviour:
     bottomText: DONT MISS the latest important trends, sign up for my FREE Weekly
       Newsletter!
     bottomLink: gamedevreport
-  lastDynamicHeaderTimestamp: 1781796943
+  lastDynamicHeaderTimestamp: 1781899196
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1781796943
+  websiteLatestMessageTimestamp: 1781899196
   websiteLatestVideos:
     videos:
+    - youTubeId: l8haAb6CPCI
+      title: AWESOME Bundle 80% OFF for Beginners and Intermediates!
     - youTubeId: tEmH8kAvGgk
       title: Unity 6.5 is OUT!
     - youTubeId: H36i5K3tTy8
       title: TOP 10 NEW Games, Made with Unity! (MAY 2026)
     - youTubeId: NYBe2xkcscA
       title: Unity Summer Sale is live up to 90% OFF!
-    - youTubeId: m0s3IUrWzVQ
-      title: How to Write High Quality Code that doesn't fall apart.
-  websiteLatestVideosTimestamp: 1781796943
+  websiteLatestVideosTimestamp: 1781899196

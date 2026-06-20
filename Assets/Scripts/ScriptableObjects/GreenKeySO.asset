@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7903a75814b0b7c419cbc3d8a1c6b6ee, type: 3}
+  m_Name: GreenKeySO
+  m_EditorClassIdentifier: Assembly-CSharp::KeyDataSO
+  keyName: GreenKey
+  keySprite: {fileID: -2627438401199300823, guid: 3761d1fb0616b7c4c9398c9cde52a7a7, type: 3}
+  keyHUDSprite: {fileID: 6716069871434709492, guid: 94c0944651a7c2b4a887ee39d07513d6, type: 3}
+  keyColor: {r: 0, g: 1, b: 0.0441339, a: 1}
