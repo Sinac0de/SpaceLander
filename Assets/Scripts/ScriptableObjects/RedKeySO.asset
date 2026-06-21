@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7903a75814b0b7c419cbc3d8a1c6b6ee, type: 3}
-  m_Name: GreenKeySO
+  m_Name: RedKeySO
   m_EditorClassIdentifier: Assembly-CSharp::KeyDataSO
-  keyName: GreenKey
-  sprite: {fileID: -2627438401199300823, guid: 3761d1fb0616b7c4c9398c9cde52a7a7, type: 3}
-  HUDSprite: {fileID: 6716069871434709492, guid: 94c0944651a7c2b4a887ee39d07513d6, type: 3}
-  color: {r: 0.046059012, g: 1, b: 0, a: 1}
+  keyName: 
+  sprite: {fileID: 4492795533394744063, guid: 3041e622987e2c24aa573a2f6f1f1cb1, type: 3}
+  HUDSprite: {fileID: -6704411614004053035, guid: 76d2c3d90042ab543a77b3aea040adf4, type: 3}
+  color: {r: 1, g: 0, b: 0, a: 1}

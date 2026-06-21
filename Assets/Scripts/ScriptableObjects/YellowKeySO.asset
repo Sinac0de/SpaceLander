@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::KeyDataSO
   keyName: YellowKey
   sprite: {fileID: -6508212642764552397, guid: 5bd27cd4988c05a4996ab761cde4928a, type: 3}
-  HUDSprite: {fileID: 0}
+  HUDSprite: {fileID: 6715315477250290336, guid: 85ce4617e630f5749bbe9318372b3e52, type: 3}
   color: {r: 1, g: 0.8075447, b: 0, a: 1}

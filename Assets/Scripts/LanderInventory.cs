@@ -5,9 +5,15 @@ using UnityEngine;
 public class LanderInventory : MonoBehaviour
 {
 
+    public static LanderInventory Instance { get; private set; }
+
     public event EventHandler OnInventoryChanged;
 
     private List<KeyDataSO> heldKeys = new List<KeyDataSO>();
+
+    private void Awake() {
+        Instance = this;
+    }
 
     public void AddKey(KeyDataSO keyData) {
         heldKeys.Add(keyData);
@@ -27,5 +33,7 @@ public class LanderInventory : MonoBehaviour
     }
 
 
-
+    public List<KeyDataSO> GetHeldKeys() {
+        return heldKeys;
+    }
 }
