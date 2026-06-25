@@ -2417,10 +2417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f4cdc886e99fd4db6e136b0311d9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  GameLevelsList:
-  - {fileID: 7098215448373575276, guid: 047f80af870ec6b45ac53e6b58d50fe1, type: 3}
-  - {fileID: 7098215448373575276, guid: be74c872daea1ef4ca6daef431e5624c, type: 3}
-  - {fileID: 7098215448373575276, guid: bcbf673c5dcecb340b0c42574485ff0e, type: 3}
+  levelDatabase: {fileID: 11400000, guid: 1aa875cbe8611aa46917023193b48675, type: 2}
   cinemachineCamera: {fileID: 1991456442}
 --- !u!4 &1311589610
 Transform:

@@ -1,36 +1,30 @@
-
 using System;
-using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
-
 
 public class GameManager : MonoBehaviour {
 
     private static int totalScore = 0;
-    private static int LevelNumber = 1;
+    public static int LevelNumber = 1;
 
     public static void ResetStaticData() {
         totalScore = 0;
         LevelNumber = 1;
     }
 
-
     public static GameManager Instance { get; private set; }
 
     public event EventHandler OnGamePaused;
     public event EventHandler OnGameUnPaused;
 
-
-    [SerializeField] private List<GameLevel> GameLevelsList;
+    [Header("Level Configurations")]
+    [SerializeField] private LevelDatabaseSO levelDatabase; 
     [SerializeField] private CinemachineCamera cinemachineCamera;
 
+    private LevelConfigSO currentLevelConfig;
     private int score;
-
     private float timer;
     private bool isTimerActive;
-
-
 
     private void Awake() {
         Instance = this;
@@ -46,16 +40,27 @@ public class GameManager : MonoBehaviour {
         LoadCurrentLevel();
     }
 
-    private void InputManager_OnPausePerformed(object sender, System.EventArgs e) {
-        PuaseUnPauseGame();
+    private void InputManager_OnPausePerformed(object sender, EventArgs e) {
+        PauseUnPauseGame();
     }
 
     private void Lander_OnStateChanged(object sender, Lander.OnStateChangedEventArgs e) {
-        isTimerActive = e.state == Lander.State.Normal;
-
         if (e.state == Lander.State.Normal) {
-            cinemachineCamera.Target.TrackingTarget = Lander.Instance.transform;
-            CinemachineCameraZoom2D.Instance.SetNormalOrthographicSize();
+            isTimerActive = true;
+        } else if (e.state == Lander.State.GameOver) {
+            isTimerActive = false;
+        }
+    }
+
+    private void Lander_OnCoinPickup(object sender, EventArgs e) {
+        score += 100; 
+    }
+
+    private void Lander_OnLanded(object sender, Lander.OnLandedEventArgs e) {
+        if (e.landingType == Lander.LandingType.Successful) {
+            
+            score += e.score;
+            LevelCompletedSuccessfully();
         }
     }
 
@@ -65,41 +70,46 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    private void Lander_OnLanded(object sender, Lander.OnLandedEventArgs e) {
-        AddScore(e.score);
-    }
-
-    private void Lander_OnCoinPickup(object sender, System.EventArgs e) {
-        AddScore(500);
-    }
-
-
-    private void AddScore(int scoreAmount) {
-        score += scoreAmount;
-    }
-
     private void LoadCurrentLevel() {
-        GameLevel spawnedLevel = GetGameLevel();
+        currentLevelConfig = levelDatabase.GetLevelConfig(LevelNumber);
 
-        Lander.Instance.transform.position = spawnedLevel.GetLanderSpawnPosition();
+        if (currentLevelConfig != null && currentLevelConfig.levelPrefab != null) {
+            Instantiate(currentLevelConfig.levelPrefab, Vector3.zero, Quaternion.identity);
 
-        cinemachineCamera.Target.TrackingTarget = spawnedLevel.GetInitialCameraTransform();
-        CinemachineCameraZoom2D.Instance.SetOrthographicSize(spawnedLevel.GetZoomedOutOrthographicSize());
+        } else {
+            Debug.LogError("Level Config or Prefab is missing for Level: " + LevelNumber);
+        }
+    }
+
+    public void LevelCompletedSuccessfully() {
+        int earnedStars = CalculateStars(score);
+
+        SaveManager.UpdateGameProgress(LevelNumber, earnedStars, score);
+
+        totalScore += score;
+    }
+
+    private int CalculateStars(int currentScore) {
+        if (currentLevelConfig == null) return 0;
+
+        if (currentScore >= currentLevelConfig.threeStarScore) return 3;
+        if (currentScore >= currentLevelConfig.twoStarScore) return 2;
+        if (currentScore >= currentLevelConfig.oneStarScore) return 1;
+
+        return 0; 
     }
 
     public GameLevel GetGameLevel() {
-        foreach (GameLevel gameLevel in GameLevelsList) {
-            if (gameLevel.GetLevelNumber() == LevelNumber) {
-                GameLevel spawnedLevel = Instantiate(gameLevel, Vector3.zero, Quaternion.identity);
-                return spawnedLevel;
-            }
-        }
-        return null;
+        LevelConfigSO config = levelDatabase.GetLevelConfig(LevelNumber);
+        return config != null ? config.levelPrefab : null;
     }
-
 
     public int GetScore() {
         return score;
+    }
+
+    public int GetTotalScore() {
+        return totalScore;
     }
 
     public float GetTimer() {
@@ -108,8 +118,8 @@ public class GameManager : MonoBehaviour {
 
     public void LoadNextLevel() {
         LevelNumber++;
-        totalScore += score;
-        if (GetGameLevel()) {
+
+        if (GetGameLevel() != null) {
             SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
         } else {
             SceneLoader.LoadScene(SceneLoader.Scene.GameOverScene);
@@ -120,12 +130,11 @@ public class GameManager : MonoBehaviour {
         SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
     }
 
-
     public int GetLevelNumber() {
         return LevelNumber;
     }
 
-    private void PuaseUnPauseGame() {
+    private void PauseUnPauseGame() {
         if (Time.timeScale == 0f) {
             UnPauseGame();
         } else if (Time.timeScale == 1f) {
@@ -142,10 +151,4 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 1f;
         OnGameUnPaused?.Invoke(this, EventArgs.Empty);
     }
-
-    public int GetTotalScore() {
-        return totalScore;
-    }
-
-
 }
