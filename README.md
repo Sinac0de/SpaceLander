@@ -1,4 +1,4 @@
-# Space Lander
+# Space Lander (Based on Codemonkey's 2D Crash-Course)
 
 A Unity 2D prototype focused on precision landing, level progression, and satisfying arcade-style feedback. The project explores core gameplay systems around controlled movement, score-based objectives, and reusable level configuration.
 
