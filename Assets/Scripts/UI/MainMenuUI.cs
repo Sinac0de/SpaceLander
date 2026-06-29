@@ -1,17 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenuUI : MonoBehaviour {
+public class MainMenuUI : BasePanel
+{
     [SerializeField] private Button startGameButton;
     [SerializeField] private Button quitGameButton;
     [SerializeField] private LevelSelectionUI levelSelectionPanel;
 
-
-    private void Awake() {
-        startGameButton.Select();
+    protected override void Awake()
+    {
+        base.Awake(); // Initial Setup from BasePanel
 
         startGameButton.onClick.AddListener(() => {
-            levelSelectionPanel.Show();
+            
+            UIManager.Instance.OpenPanelWithTransition(levelSelectionPanel);
         });
 
         quitGameButton.onClick.AddListener(() => {
@@ -19,13 +21,9 @@ public class MainMenuUI : MonoBehaviour {
         });
     }
 
-    public void Show() {
-        gameObject.SetActive(true);
+    public override void Open()
+    {
+        base.Open();
         startGameButton.Select();
     }
-
-    public void Hide() {
-        gameObject.SetActive(false);
-    }
-
 }
