@@ -38,7 +38,6 @@ public class LevelSelectionUI : MonoBehaviour {
             if (isUnlocked) {
                 int levelToLoad = levelConfig.levelNumber;
                 buttonUI.button.onClick.AddListener(() => {
-                    Hide();
                     GameManager.LevelNumber = levelToLoad;
                     SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
                 });

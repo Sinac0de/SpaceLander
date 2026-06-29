@@ -44,11 +44,13 @@ public class GameManager : MonoBehaviour {
         PauseUnPauseGame();
     }
 
+
     private void Lander_OnStateChanged(object sender, Lander.OnStateChangedEventArgs e) {
+        isTimerActive = e.state == Lander.State.Normal;
+
         if (e.state == Lander.State.Normal) {
-            isTimerActive = true;
-        } else if (e.state == Lander.State.GameOver) {
-            isTimerActive = false;
+            cinemachineCamera.Target.TrackingTarget = Lander.Instance.transform;
+            CinemachineCameraZoom2D.Instance.SetNormalOrthographicSize();
         }
     }
 
@@ -72,9 +74,15 @@ public class GameManager : MonoBehaviour {
 
     private void LoadCurrentLevel() {
         currentLevelConfig = levelDatabase.GetLevelConfig(LevelNumber);
+        GameLevel spawnedLevel = GetGameLevel();
 
         if (currentLevelConfig != null && currentLevelConfig.levelPrefab != null) {
             Instantiate(currentLevelConfig.levelPrefab, Vector3.zero, Quaternion.identity);
+
+             Lander.Instance.transform.position = spawnedLevel.GetLanderSpawnPosition();
+
+                    cinemachineCamera.Target.TrackingTarget = spawnedLevel.GetInitialCameraTransform();
+        CinemachineCameraZoom2D.Instance.SetOrthographicSize(spawnedLevel.GetZoomedOutOrthographicSize());
 
         } else {
             Debug.LogError("Level Config or Prefab is missing for Level: " + LevelNumber);

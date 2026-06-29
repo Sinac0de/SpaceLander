@@ -23,6 +23,7 @@ public class CinemachineCameraZoom2D : MonoBehaviour
     }
 
     public void SetOrthographicSize(float orthographicSize) {
+        Debug.Log("SetOrtho" + " " + orthographicSize);
         this.orthographicSize = orthographicSize;
     }
 
