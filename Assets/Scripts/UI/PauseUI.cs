@@ -19,7 +19,7 @@ public class PauseUI : MonoBehaviour
 
         mainMenuButton.onClick.AddListener(() => {
             Time.timeScale = 1f;
-            SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
+            UIManager.Instance.LoadSceneWithTransition(SceneLoader.Scene.MainMenuScene);
         });
 
         musicVolumeButton.onClick.AddListener(() => {

@@ -10,7 +10,7 @@ public class GameOverUI : MonoBehaviour {
         mainMenuButton.Select();
 
         mainMenuButton.onClick.AddListener(() => {
-            SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
+            UIManager.Instance.LoadSceneWithTransition(SceneLoader.Scene.MainMenuScene);
         });
     }
 

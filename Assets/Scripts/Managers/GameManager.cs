@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
     public event EventHandler OnGameUnPaused;
 
     [Header("Level Configurations")]
-    [SerializeField] private LevelDatabaseSO levelDatabase; 
+    [SerializeField] private LevelDatabaseSO levelDatabase;
     [SerializeField] private CinemachineCamera cinemachineCamera;
 
     private LevelConfigSO currentLevelConfig;
@@ -55,12 +55,12 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Lander_OnCoinPickup(object sender, EventArgs e) {
-        score += 100; 
+        score += 100;
     }
 
     private void Lander_OnLanded(object sender, Lander.OnLandedEventArgs e) {
         if (e.landingType == Lander.LandingType.Successful) {
-            
+
             score += e.score;
             LevelCompletedSuccessfully();
         }
@@ -77,12 +77,13 @@ public class GameManager : MonoBehaviour {
         GameLevel spawnedLevel = GetGameLevel();
 
         if (currentLevelConfig != null && currentLevelConfig.levelPrefab != null) {
+
             Instantiate(currentLevelConfig.levelPrefab, Vector3.zero, Quaternion.identity);
 
-             Lander.Instance.transform.position = spawnedLevel.GetLanderSpawnPosition();
+            Lander.Instance.transform.position = spawnedLevel.GetLanderSpawnPosition();
 
-                    cinemachineCamera.Target.TrackingTarget = spawnedLevel.GetInitialCameraTransform();
-        CinemachineCameraZoom2D.Instance.SetOrthographicSize(spawnedLevel.GetZoomedOutOrthographicSize());
+            cinemachineCamera.Target.TrackingTarget = spawnedLevel.GetInitialCameraTransform();
+            CinemachineCameraZoom2D.Instance.SetOrthographicSize(spawnedLevel.GetZoomedOutOrthographicSize());
 
         } else {
             Debug.LogError("Level Config or Prefab is missing for Level: " + LevelNumber);
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour {
         if (currentScore >= currentLevelConfig.twoStarScore) return 2;
         if (currentScore >= currentLevelConfig.oneStarScore) return 1;
 
-        return 0; 
+        return 0;
     }
 
     public GameLevel GetGameLevel() {
@@ -128,14 +129,14 @@ public class GameManager : MonoBehaviour {
         LevelNumber++;
 
         if (GetGameLevel() != null) {
-            SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
+            UIManager.Instance.LoadSceneWithTransition(SceneLoader.Scene.GameScene);
         } else {
-            SceneLoader.LoadScene(SceneLoader.Scene.GameOverScene);
+            UIManager.Instance.LoadSceneWithTransition(SceneLoader.Scene.GameOverScene);
         }
     }
 
     public void RetryLevel() {
-        SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
+        UIManager.Instance.LoadSceneWithTransition(SceneLoader.Scene.GameScene);
     }
 
     public int GetLevelNumber() {
