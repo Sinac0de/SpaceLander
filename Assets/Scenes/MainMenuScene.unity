@@ -315,7 +315,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 3025370438878847380, guid: 458e9a6bcda2f8b46bb7ddc4ca2e7de9, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -388,11 +388,6 @@ MonoBehaviour:
   gridContainer: {fileID: 1443877870}
   backToMainMenuButton: {fileID: 1446046570}
   mainMenuPanel: {fileID: 876410006}
---- !u!1 &338166516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8136680110382366679, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
-  m_PrefabInstance: {fileID: 960409980}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &462267001
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,11 +492,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &645823647 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8136680110382366679, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
-  m_PrefabInstance: {fileID: 2077126739}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &876016001
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,8 +526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -7.7296143}
-  m_SizeDelta: {x: 1847.483, y: 995.4592}
+  m_AnchoredPosition: {x: -7.915, y: -14.342}
+  m_SizeDelta: {x: 2315.177, y: 1229.564}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &876016003
 MonoBehaviour:
@@ -751,10 +741,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2007584303137446608, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1917362305}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8136680110382366679, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 960409985}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
 --- !u!224 &960409981 stripped
 RectTransform:
@@ -766,25 +753,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 328919512873925474, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
   m_PrefabInstance: {fileID: 960409980}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338166516}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &960409985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338166516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.OnScreen.OnScreenButton
-  m_ControlPath: <Touchscreen>/primaryTouch/tap
 --- !u!1 &1292771160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,8 +1323,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -470, y: 210}
-  m_SizeDelta: {x: 880.8829, y: 880.8829}
+  m_AnchoredPosition: {x: -7.915, y: 288.87}
+  m_SizeDelta: {x: 537.729, y: 537.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802789052
 MonoBehaviour:
@@ -1644,11 +1618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2007584303137446608, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 222.738
       objectReference: {fileID: 0}
     - target: {fileID: 2007584303137446608, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 222.738
       objectReference: {fileID: 0}
     - target: {fileID: 2007584303137446608, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1680,11 +1654,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2007584303137446608, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -38.631004
       objectReference: {fileID: 0}
     - target: {fileID: 2007584303137446608, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -130
+      value: -91.368996
       objectReference: {fileID: 0}
     - target: {fileID: 2007584303137446608, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1725,10 +1699,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2007584303137446608, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 67638110}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8136680110382366679, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2077126744}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
 --- !u!224 &2077126740 stripped
 RectTransform:
@@ -1740,25 +1711,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 328919512873925474, guid: 392a90f901ce53e41b39c5081d9de70b, type: 3}
   m_PrefabInstance: {fileID: 2077126739}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645823647}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &2077126744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645823647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.OnScreen.OnScreenButton
-  m_ControlPath: <Touchscreen>/primaryTouch/tap
 --- !u!1 &2090991502
 GameObject:
   m_ObjectHideFlags: 0
