@@ -67,7 +67,9 @@ public class UIManager : MonoBehaviour {
         blackScreen.DOFade(1, transitionDuration).OnComplete(() => {
             // 2. Close all the panels
             foreach (var p in registeredPanels) {
-                p.gameObject.SetActive(false);
+                if (p != null) {
+                    p.gameObject.SetActive(false);
+                }
             }
 
             // 3. Open the new Panel

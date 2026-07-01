@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour {
         totalScore += score;
     }
 
-    private int CalculateStars(int currentScore) {
+    public int CalculateStars(int currentScore) {
         if (currentLevelConfig == null) return 0;
 
         if (currentScore >= currentLevelConfig.threeStarScore) return 3;
